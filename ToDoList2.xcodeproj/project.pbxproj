@@ -14,6 +14,7 @@
 		4E327CED1B5BC9EF00ACB954 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E327CEC1B5BC9EF00ACB954 /* Images.xcassets */; };
 		4E327CF01B5BC9EF00ACB954 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E327CEE1B5BC9EF00ACB954 /* LaunchScreen.xib */; };
 		4E327CFC1B5BC9EF00ACB954 /* ToDoList2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E327CFB1B5BC9EF00ACB954 /* ToDoList2Tests.swift */; };
+		4E327D061B5BCFD400ACB954 /* ItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E327D051B5BCFD400ACB954 /* ItemsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		4E327CF51B5BC9EF00ACB954 /* ToDoList2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoList2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E327CFA1B5BC9EF00ACB954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E327CFB1B5BC9EF00ACB954 /* ToDoList2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList2Tests.swift; sourceTree = "<group>"; };
+		4E327D051B5BCFD400ACB954 /* ItemsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				4E327CE91B5BC9EF00ACB954 /* Main.storyboard */,
 				4E327CEC1B5BC9EF00ACB954 /* Images.xcassets */,
 				4E327CEE1B5BC9EF00ACB954 /* LaunchScreen.xib */,
+				4E327D051B5BCFD400ACB954 /* ItemsManager.swift */,
 				4E327CE11B5BC9EF00ACB954 /* Supporting Files */,
 			);
 			path = ToDoList2;
@@ -217,6 +220,7 @@
 			files = (
 				4E327CE81B5BC9EF00ACB954 /* SecondViewController.swift in Sources */,
 				4E327CE41B5BC9EF00ACB954 /* AppDelegate.swift in Sources */,
+				4E327D061B5BCFD400ACB954 /* ItemsManager.swift in Sources */,
 				4E327CE61B5BC9EF00ACB954 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
