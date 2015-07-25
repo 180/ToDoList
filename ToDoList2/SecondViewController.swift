@@ -11,7 +11,6 @@ import UIKit
 class SecondViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var detailsTextField: UITextField!
     
     override func viewDidLoad() {
@@ -56,8 +55,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Empty name!", message: "You cannot save item without a name", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-            
-            self.presentViewController(alert, animated: true, completion: nil)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
         
     }
     
