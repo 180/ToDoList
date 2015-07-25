@@ -11,21 +11,9 @@ import CoreData
 
 var itemsMgr: ItemsManager = ItemsManager()
 
-struct item {
-    var name = ""
-    var details = ""
-}
-
 class ItemsManager : NSObject {
     
-    var items = [item]() // Variable holding array of items initialized with nothing :)
-    
-    func addItem(name:String, details: String) {
-        items.append(item(name: name, details: details))
-        saveItem(name, details: details)
-    }
-    
-    func saveItem(name: String, details: String) {
+    func addItem(name: String, details: String) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext!
@@ -34,6 +22,18 @@ class ItemsManager : NSObject {
         
         itemMO.setValue(name, forKey: "name")
         itemMO.setValue(details, forKey: "details")
+        
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+    }
+    
+    func deleteItem(item: NSManagedObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        
+        managedContext.deleteObject(item)
         
         var error: NSError?
         if !managedContext.save(&error) {

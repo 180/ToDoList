@@ -38,7 +38,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         if (nameTextField.text.isEmpty) {
             displayAlert()
         } else {
-            
             itemsMgr.addItem(nameTextField.text, details: detailsTextField.text)
             
             nameTextField.text = ""

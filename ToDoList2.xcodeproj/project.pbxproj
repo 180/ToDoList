@@ -16,6 +16,7 @@
 		4E327CFC1B5BC9EF00ACB954 /* ToDoList2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E327CFB1B5BC9EF00ACB954 /* ToDoList2Tests.swift */; };
 		4E327D061B5BCFD400ACB954 /* ItemsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E327D051B5BCFD400ACB954 /* ItemsManager.swift */; };
 		4EF4E0B51B634067004C6819 /* ToDoList2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4E0B31B634067004C6819 /* ToDoList2.xcdatamodeld */; };
+		4EF4E0BB1B63543D004C6819 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF4E0BA1B63543D004C6819 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		4E327CFB1B5BC9EF00ACB954 /* ToDoList2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList2Tests.swift; sourceTree = "<group>"; };
 		4E327D051B5BCFD400ACB954 /* ItemsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsManager.swift; sourceTree = "<group>"; };
 		4EF4E0B41B634067004C6819 /* ToDoList2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList2.xcdatamodel; sourceTree = "<group>"; };
+		4EF4E0BA1B63543D004C6819 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ToDoList2/Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		4E327CD51B5BC9EF00ACB954 = {
 			isa = PBXGroup;
 			children = (
+				4EF4E0BA1B63543D004C6819 /* Item.swift */,
 				4E327CE01B5BC9EF00ACB954 /* ToDoList2 */,
 				4E327CF81B5BC9EF00ACB954 /* ToDoList2Tests */,
 				4E327CDF1B5BC9EF00ACB954 /* Products */,
@@ -225,6 +228,7 @@
 				4E327CE41B5BC9EF00ACB954 /* AppDelegate.swift in Sources */,
 				4EF4E0B51B634067004C6819 /* ToDoList2.xcdatamodeld in Sources */,
 				4E327D061B5BCFD400ACB954 /* ItemsManager.swift in Sources */,
+				4EF4E0BB1B63543D004C6819 /* Item.swift in Sources */,
 				4E327CE61B5BC9EF00ACB954 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

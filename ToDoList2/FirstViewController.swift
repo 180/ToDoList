@@ -7,21 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    var items = [Item]()
     
     @IBOutlet weak var itemsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        itemsTableView.reloadData()
+
+        fetchData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,15 +35,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Table View Data Souce methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsMgr.items.count
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "CellId")
         
-        cell.textLabel!.text = itemsMgr.items[indexPath.row].name
-        cell.detailTextLabel!.text = itemsMgr.items[indexPath.row].details
+        let item = items[indexPath.row]
+        
+        cell.textLabel!.text = item.name
+        cell.detailTextLabel!.text = item.details
         
         return cell
     }
@@ -50,9 +54,29 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            itemsMgr.items.removeAtIndex(indexPath.row);
-            itemsTableView.reloadData()
+            itemsMgr.deleteItem(items[indexPath.row])
+   
+          fetchData()
         }
     }
+    
+    func fetchData() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest = NSFetchRequest(entityName:"Item")
+        
+        var error: NSError?
+        
+        let fetchedResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as? [Item]
+        
+        if let results = fetchedResults {
+            items = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+         itemsTableView.reloadData()
+    }
+    
 }
 
