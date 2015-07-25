@@ -9,7 +9,7 @@
 import UIKit
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var itemsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,12 +23,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         itemsTableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     // Table View Data Souce methods
     
@@ -45,6 +45,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
-
+    
+    // Swipe to delete
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            itemsMgr.items.removeAtIndex(indexPath.row);
+            itemsTableView.reloadData()
+        }
+    }
 }
 
